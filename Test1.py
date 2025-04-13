@@ -50,6 +50,7 @@ if __name__ == "__main__":
             print(f"Market Cap: ${info.get('marketCap', 'N/A')}")
             print(f"PE Ratio: {info.get('trailingPE', 'N/A')}")
             print(f"Revenue Growth: {info.get('revenueGrowth', 'N/A')}")
+            print(f"Profit Margin: {info.get('profitMargins', 'N/A')}")
             
         except Exception as e:
             print(f"Error processing {symbol}: {str(e)}")
