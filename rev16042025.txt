@@ -2,16 +2,20 @@ import requests
 import pandas as pd
 from datetime import datetime
 from supabase import create_client
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
 
 # Alpha Vantage API configuration
-#API_KEY = 'GAVV7ZLEKJ7M6M42'
-API_KEY = 'AYTOXEPEL94213GS'
+API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY')
 
 SYMBOL = 'MSFT'
 
 # Supabase configuration
-SUPABASE_URL = 'https://xxstiqtixhgyxwwkemjd.supabase.co'
-SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4c3RpcXRpeGhneXh3d2tlbWpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ2NDUxMTQsImV4cCI6MjA2MDIyMTExNH0.KP0O-Mqoa_IlDpGSm5LwaKzpYVKFyGn73bKkox6eCaQ'
+SUPABASE_URL = os.getenv('SUPABASE_URL')
+SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Function to get data from Alpha Vantage
